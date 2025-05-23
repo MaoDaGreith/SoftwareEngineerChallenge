@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Packs Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Order Packs Calculator</h1>
+        <p class="subtitle">Calculate optimal pack combinations for item orders</p>
+        
+        <div class="form-section">
+            <h2>Pack Sizes</h2>
+            <div class="pack-sizes">
+                <div class="pack-size-input">
+                    <input type="number" placeholder="Pack size" min="1">
+                    <button type="button" class="remove-pack">×</button>
+                </div>
+            </div>
+            <button type="button" id="add-pack" class="btn btn-secondary">Add Pack Size</button>
+            <button type="button" id="use-defaults" class="btn btn-secondary">Use Default Pack Sizes</button>
+        </div>
+
+        <div class="form-section">
+            <h2>Calculate Packs for Order</h2>
+            <div class="order-input">
+                <label for="order-amount">Items:</label>
+                <input type="number" id="order-amount" placeholder="Enter number of items" min="1">
+                <button type="button" id="calculate" class="btn btn-primary">Calculate</button>
+            </div>
+        </div>
+
+        <div id="loading" class="loading hidden">Calculating...</div>
+
+        <div id="results" class="results hidden">
+            <h2>Pack Breakdown</h2>
+            <div id="pack-breakdown" class="pack-breakdown"></div>
+            <div id="summary" class="summary"></div>
+        </div>
+
+        <div id="error" class="error hidden"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 

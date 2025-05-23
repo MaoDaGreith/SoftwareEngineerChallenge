@@ -1,0 +1,43 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Go
+      uses: actions/setup-go@v3
+      with:
+        go-version: 1.21
+    
+    - name: Run tests
+      run: go test ./...
+    
+    - name: Build application
+      run: go build -o server cmd/server/main.go
+
+  build-and-deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Build Docker image
+      run: docker build -t order-packs-calculator .
+    
+    - name: Deploy to Railway
+      if: github.ref == 'refs/heads/main'
+      run: |
+        echo "Deploy to Railway using Railway CLI or API"
+        # Railway deployment steps would go here
+        # This requires Railway CLI setup or API integration 
