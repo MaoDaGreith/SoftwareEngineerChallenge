@@ -16,4 +16,4 @@
 # Docker
 *.env
 *.local
-.docker/ 
+.docker/ .DS_Store

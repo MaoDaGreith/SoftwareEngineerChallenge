@@ -45,5 +45,3 @@ func LoadDefaultPackSizes() {
 func GetDefaultPackSizes() []int {
 	return defaultPackSizes
 }
-
-// TODO: Implement config loader for pack sizes

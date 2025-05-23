@@ -19,7 +19,7 @@ The application is live and fully functional - you can test the pack calculator 
 - **Smart Algorithm**: Minimizes over-shipping and pack count
 - **Web Interface**: Modern, responsive UI
 - **REST API**: Clean JSON API for integration
-- **Configurable**: Environment variables, JSON config, or API parameters
+- **Configurable**: Environment variables or API parameters
 - **Docker Ready**: Multi-stage builds for production
 - **CI/CD**: GitHub Actions for automated testing and deployment
 
